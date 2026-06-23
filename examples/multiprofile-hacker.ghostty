@@ -1,0 +1,51 @@
+# Migrated from iTerm2 profile "Hacker"
+# Source: 3.6.9 preferences plist
+
+# --- Font ---
+# iTerm2: Normal Font = "Menlo-Bold 15"  (verify family resolves to an installed font)
+font-family = "Menlo"
+font-size = 15
+# iTerm2: Use Bright Bold = true
+bold-is-bright = true
+
+# --- Window ---
+# iTerm2: Columns = 120
+window-width = 120
+# iTerm2: Rows = 40
+window-height = 40
+
+# --- Background transparency & blur ---
+# iTerm2: Transparency = 0.1 -> opacity = 1 - that
+background-opacity = 0.9
+# iTerm2: Blur = true (iTerm Blur Radius ~8.0)
+background-blur = true
+
+# --- Cursor ---
+cursor-style-blink = false
+
+# --- Scrollback ---
+# iTerm2: Unlimited Scrollback = true
+# Ghostty caps scrollback in BYTES (0 would DISABLE it); 100MB ~= unlimited.
+scrollback-limit = 100000000
+
+# --- Colors (from iTerm2 profile) ---
+background = #000000
+foreground = #00ff00
+cursor-color = #00ff00
+# ANSI palette (iTerm2 'Ansi N Color')
+palette = 0=#000000
+palette = 1=#ff5555
+palette = 2=#00ff00
+palette = 3=#ffff55
+palette = 4=#5555ff
+palette = 5=#ff55ff
+palette = 6=#55ffff
+palette = 7=#bbbbbb
+palette = 8=#555555
+palette = 9=#ff5555
+palette = 10=#33ff33
+palette = 11=#ffff55
+palette = 12=#5555ff
+palette = 13=#ff55ff
+palette = 14=#55ffff
+palette = 15=#ffffff

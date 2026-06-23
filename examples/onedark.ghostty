@@ -1,0 +1,52 @@
+# Migrated from iTerm2 profile "OneDark"
+# Source: 3.6.9 preferences plist
+
+# --- Font ---
+# iTerm2: Normal Font = "Menlo-Regular 13"  (verify family resolves to an installed font)
+font-family = "Menlo"
+font-size = 13
+
+# --- Window ---
+# iTerm2: Columns = 100
+window-width = 100
+# iTerm2: Rows = 30
+window-height = 30
+
+# --- Cell spacing (iTerm Horizontal/Vertical Spacing) ---
+adjust-cell-height = 10%
+
+# --- Cursor ---
+cursor-style-blink = true
+cursor-style = bar
+
+# --- Keyboard ---
+# iTerm2: Left/Right Option sends Esc+/Meta
+macos-option-as-alt = left
+
+# --- Colors (from iTerm2 profile) ---
+background = #282c34
+foreground = #abb2bf
+cursor-color = #528bff
+cursor-text = #282c34
+selection-background = #3e4451
+selection-foreground = #abb2bf
+# ANSI palette (iTerm2 'Ansi N Color')
+palette = 0=#282c34
+palette = 1=#e06c75
+palette = 2=#98c379
+palette = 3=#e5c07b
+palette = 4=#61afef
+palette = 5=#c678dd
+palette = 6=#56b6c2
+palette = 7=#abb2bf
+palette = 8=#545862
+palette = 9=#e06c75
+palette = 10=#98c379
+palette = 11=#e5c07b
+palette = 12=#61afef
+palette = 13=#c678dd
+palette = 14=#56b6c2
+palette = 15=#c8ccd4
+
+# --- Not migrated (no clean Ghostty equivalent) ---
+# - Scrollback Lines = 5000 (iTerm counts lines; Ghostty's scrollback-limit is in bytes -- left at default)
