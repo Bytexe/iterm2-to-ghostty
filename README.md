@@ -1,13 +1,11 @@
 # Migrating iTerm2 to Ghostty (and cmux)
 
-A Claude Code skill for moving an iTerm2 profile to a [Ghostty](https://github.com/ghostty-org/ghostty) (and [cmux](https://cmux.com)) *correctly* —
+A Claude Code skill for moving an iTerm2 profile to a [Ghostty](https://ghostty.org/) (and [cmux](https://cmux.com)) config *correctly* —
 colors, font, transparency, cursor, window size, scrollback, and the Option key.
-You install it, then ask Claude Code to migrate your setup; it does the
-conversion, checks your font, and shows you what changed.
 
-It's just as suitable for cmux: cmux is built on Ghostty
-and reads the same config file, so the config this skill generates drives cmux
-too — no extra steps.
+**Moving to cmux?** This is for you too — cmux is built on
+Ghostty and reads the same config, so generating that Ghostty config is exactly
+how you carry your iTerm2 look-and-feel into cmux.
 
 The catch it exists to solve: a hand-copied config quietly gets things wrong.
 
@@ -32,11 +30,14 @@ The skill encodes those rules, verifies the target font is actually installed,
 refuses to silently convert the wrong profile, never overwrites an existing
 config without asking, and shows a human-readable summary of what changed.
 
+## Requirements
+
+- macOS (iTerm2 and the Ghostty/cmux config are macOS-only)
+- Python 3 (runs the converter; `python3`, no extra packages)
+
 ## Install
 
-Installed with [`skills`](https://www.npmjs.com/package/skills) — the open
-agent-skills CLI (requires Node ≥ 18). `SKILL.md` is at the repo root, so the
-repo installs directly from GitHub:
+Use the `skills` CLI from vercel-labs.
 
 ```bash
 # add to your user skills (available in every project)
@@ -79,21 +80,18 @@ writing. A running Ghostty reloads with ⌘+⇧+,.
 | `references/mapping.md` | The full iTerm2 → Ghostty key map and the reasoning behind each conversion |
 | `examples/` | Sample iTerm2 plists and their converted Ghostty configs |
 
-## Requirements
-
-- macOS
-- Python 3.8+ (standard library only — nothing to `pip install`)
-- The font-installed check uses `fc-list` or `system_profiler` (already on macOS)
-
 ## Also works with cmux
 
-[cmux](https://github.com/manaflow-ai/cmux) is a Ghostty-based terminal
-(`libghostty`) that reads the **same Ghostty config files** — `~/.config/ghostty/config`,
-then `~/Library/Application Support/com.mitchellh.ghostty/config.ghostty`. So the
-config this skill generates drives cmux too, with no extra work. cmux-only
-features (vertical tabs, sidebar, notifications) live separately in
-`~/.config/cmux/cmux.json` and aren't part of an iTerm2 profile, so they're out
-of scope here.
+cmux is a Ghostty-based terminal — its rendering layer is `libghostty` — so it
+loads the **same Ghostty config** this skill produces. Nothing extra to set up:
+
+- **Same file.** cmux reads Ghostty's config from the usual locations, in order:
+  - `~/.config/ghostty/config`
+  - `~/Library/Application Support/com.mitchellh.ghostty/config.ghostty`
+- **Shared settings.** Everything this skill migrates — colors, font,
+  transparency, cursor, palette, scrollback — applies to cmux and Ghostty alike.
+- **Out of scope.** cmux-only features (vertical tabs, sidebar, notifications)
+  live in `~/.config/cmux/cmux.json`; they aren't part of an iTerm2 profile.
 
 ## License
 
